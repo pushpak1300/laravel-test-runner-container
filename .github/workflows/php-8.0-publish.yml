@@ -1,4 +1,4 @@
-name: php-7.4-publish
+name: php-8.0-publish
 on:
   push:
     branches:
@@ -16,5 +16,5 @@ jobs:
         name: kirschbaumdevelopment/laravel-test-runner
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        workdir: 7.4
-        tags: "7.4"
+        workdir: 8.0
+        tags: "8.0"

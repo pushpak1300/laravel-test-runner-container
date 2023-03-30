@@ -9,7 +9,7 @@ RUN add-apt-repository ppa:ondrej/php -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN apt-get update -y
 RUN apt-get install -y \
-    unzip  \
+    unzip \
     php8.0-cli \
     php8.0-gd \
     php8.0-ldap \
@@ -26,16 +26,14 @@ RUN apt-get install -y \
     php8.0-bcmath \
     php8.0-intl \
     php8.0-imap \
-    php8.0-phpdbg
+    php8.0-phpdbg \
+    php8.0-redis
 
 # composer
 ENV COMPOSER_HOME=/composer
 ENV PATH=./vendor/bin:/composer/vendor/bin:/root/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install hirak/prestissimo package
-RUN composer global require hirak/prestissimo
 
 # mysql client
 RUN apt-get install -y mysql-client
@@ -44,7 +42,7 @@ RUN apt-get install -y mysql-client
 RUN apt-get install -y git
 
 # node and yarn
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g yarn
 

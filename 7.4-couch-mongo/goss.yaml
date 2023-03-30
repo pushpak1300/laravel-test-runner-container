@@ -2,7 +2,7 @@ command:
   node --version:
     exit-status: 0
     stdout:
-      - "v14"
+      - "v12"
   yarn --version:
     exit-status: 0
   npm --version:
@@ -16,7 +16,7 @@ command:
   php --version:
     exit-status: 0
     stdout:
-      - 8
+      - 7
   php -m:
     exit-status: 0
     stdout:
@@ -25,6 +25,7 @@ command:
       - exif
       - gd
       - iconv
+      - imagick
       - imap
       - intl
       - ldap
@@ -37,3 +38,5 @@ command:
       - soap
       - xml
       - zip
+      - mongodb
+      - couchbase

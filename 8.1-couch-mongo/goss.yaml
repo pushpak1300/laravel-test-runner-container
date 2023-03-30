@@ -16,7 +16,7 @@ command:
   php --version:
     exit-status: 0
     stdout:
-      - 8
+      - 8.1
   php -m:
     exit-status: 0
     stdout:
@@ -37,3 +37,5 @@ command:
       - soap
       - xml
       - zip
+      - mongodb
+      - couchbase

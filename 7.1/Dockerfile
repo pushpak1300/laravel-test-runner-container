@@ -10,35 +10,32 @@ RUN add-apt-repository ppa:git-core/ppa -y
 RUN apt-get update -y
 RUN apt-get install -y \
     unzip  \
-    php7.2-cli \
-    php7.2-gd \
-    php7.2-json \
-    php7.2-ldap \
-    php7.2-mbstring \
-    php7.2-mysql \
-    php7.2-pgsql \
-    php7.2-sqlite3 \
-    php7.2-xml \
-    php7.2-xsl \
-    php7.2-zip \
-    php7.2-curl \
-    php7.2-soap \
-    php7.2-gmp \
-    php7.2-bcmath \
-    php7.2-imagick \
-    php7.2-intl \
-    php7.2-redis \
-    php7.2-imap \
-    php7.2-phpdbg
+    php7.1-cli \
+    php7.1-gd \
+    php7.1-json \
+    php7.1-ldap \
+    php7.1-mbstring \
+    php7.1-mysql \
+    php7.1-pgsql \
+    php7.1-sqlite3 \
+    php7.1-xml \
+    php7.1-xsl \
+    php7.1-zip \
+    php7.1-curl \
+    php7.1-soap \
+    php7.1-gmp \
+    php7.1-bcmath \
+    php7.1-imagick \
+    php7.1-intl \
+    php7.1-redis \
+    php7.1-imap \
+    php7.1-phpdbg
 
 # composer
 ENV COMPOSER_HOME=/composer
 ENV PATH=./vendor/bin:/composer/vendor/bin:/root/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install hirak/prestissimo package
-RUN composer global require hirak/prestissimo
 
 # mysql client
 RUN apt-get install -y mysql-client
